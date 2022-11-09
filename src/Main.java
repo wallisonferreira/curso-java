@@ -5,25 +5,29 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Locale.setDefault(Locale.US);
+		double a, b, c;
+		double x1, x2;
+		double delta;
+		
+		System.out.println("Informe os valores de a, b, c");
+		
 		Scanner sc = new Scanner(System.in);
 		
-		int x;
-		String s1, s2, s3;
+		a = sc.nextDouble();
+		b = sc.nextDouble();
+		c = sc.nextDouble();
 		
-		x = sc.nextInt();
-		sc.nextLine();
-		s1 = sc.nextLine();
-		s2 = sc.nextLine();
-		s3 = sc.nextLine();
+		delta = Math.pow(b, 2.0) - 4*a*c;
 		
-		System.out.println("Dados digitados:");
-		System.out.println(x);
-		System.out.println(s1);
-		System.out.println(s2);
-		System.out.println(s3);
+		if (delta < 0) {
+			System.out.println("Não possui raíz. Delta = " + delta);
+		} else {
+			x1 = (-b + Math.sqrt(delta)) / (2.0*a);
+			x2 = (-b - Math.sqrt(delta)) / (2.0*a);
+			
+			System.out.printf("Raízes x1 = %.2f e x2 = %.2f", x1, x2);
+		}
 		
-		sc.close();
 	}
 
 }
